@@ -1,0 +1,10 @@
+Depth Stream Resolution: 848x480
+Principal Point: 424.384, 232.243
+Focal Length: 429.95, 429.95
+Distortion Model: Brown Conrady
+Distortion Coefficients: 0, 0, 0, 0, 0
+Translation Vector : [0.0148573,-4.45279e-06,-9.70754e-05]
+Rotation Matrix    : [0.999912,0.0114673,0.00661652]
+                   : [-0.0114471,0.99993,-0.00308035]
+                   : [-0.00665137,0.00300434,0.999973]
+Write to file successfully!

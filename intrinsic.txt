@@ -1,0 +1,17 @@
+Intrinsics Parameter
+Depth sensor id: 1
+width: 848
+height: 480
+ppx: 424.384
+ppy: 232.243
+fx: 429.95
+fy: 429.95
+distortion: 0 0 0 0 0
+-----------------------------
+
+Extrinsics Parameter
+Color sensor id: 1
+Translation Vector : [0.0148573,-4.45279e-06,-9.70754e-05]
+Rotation Matrix    : [0.999912,0.0114673,0.00661652]
+                   : [-0.0114471,0.99993,-0.00308035]
+                   : [-0.00665137,0.00300434,0.999973]
