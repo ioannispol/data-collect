@@ -1,0 +1,1 @@
+/usr/bin/c++ -g -rdynamic CMakeFiles/D435_intrinsics.dir/main.cpp.o -o D435_intrinsics  -Wl,-rpath,/usr/local/lib /usr/local/lib/librealsense2.so.2.50.0 
