@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/pi/data-collect/d435-intrisics.cpp
+iostream
+-
+fstream
+-
+set
+-
+iomanip
+-
+librealsense2/rs.hpp
+-
+librealsense2/rsutil.h
+-
+librealsense2/h/rs_sensor.h
+-
+
