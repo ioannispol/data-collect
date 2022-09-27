@@ -1,3 +1,3 @@
 #!/bin/bash
 
-python leak-sensor/ard2pi.py
+sudo python leak-sensor/ard2pi.py
