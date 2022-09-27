@@ -1,4 +1,4 @@
-# Install script for directory: /home/ioannis/Documents/01-Projects/PhD/Year 3/D435/datacollect/data-collect
+# Install script for directory: /home/pi/data-collect
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/ioannis/Documents/01-Projects/PhD/Year 3/D435/datacollect/data-collect/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/pi/data-collect/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

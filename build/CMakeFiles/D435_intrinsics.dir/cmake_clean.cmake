@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/D435_intrinsics.dir/d435-intrisics.cpp.o"
-  "CMakeFiles/D435_intrinsics.dir/d435-intrisics.cpp.o.d"
   "D435_intrinsics"
   "D435_intrinsics.pdb"
 )
