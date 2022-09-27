@@ -1,7 +1,7 @@
 #!/bin/bash
 # Data collection script
 
-FILE=~/d345-data-collect
+FILE=~/d435-data-collect
 cfg="data_collect.cfg"
 
 if ls $FILE; then
@@ -38,6 +38,7 @@ rs-enumerate-devices -c > $FILE/d435_data/d435_intrinsics_extrinsics.txt
 ./build/D435_intrinsics
  if [ $? -eq 0 ]; then
      echo "D435_intrinsics completed"
+     mv build/intrinsic.txt $FILE/d435_data/intrinsics.txt
  else
      echo "D435_intrinsics failed"
      exit 1
@@ -45,7 +46,7 @@ rs-enumerate-devices -c > $FILE/d435_data/d435_intrinsics_extrinsics.txt
 
 echo "==========================================================="
 echo "rs-record started"
-read -rp "Enter the data collection number: " collect_num
+read -rp "Enter the data collection number (d435_recode_number): " collect_num
 
 rs-record -f $FILE/d435_data/d435_record_$collect_num.bag -t $collect_time
 if [ $? -eq 0 ]; then
