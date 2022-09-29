@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/ioannis/Dev/camera_calibration/CameraCalibration/build",
+  "command": "/bin/x86_64-linux-gnu-g++-11  -isystem /usr/local/include/opencv4 -g -std=gnu++14 -o CMakeFiles/cameraCalibration.dir/cameraCalibration.cpp.o -c /home/ioannis/Dev/camera_calibration/CameraCalibration/cameraCalibration.cpp",
+  "file": "/home/ioannis/Dev/camera_calibration/CameraCalibration/cameraCalibration.cpp"
+},
+{
+  "directory": "/home/ioannis/Dev/camera_calibration/CameraCalibration/build",
+  "command": "/bin/x86_64-linux-gnu-g++-11  -isystem /usr/local/include/opencv4 -g -std=gnu++14 -o CMakeFiles/cameraCalibrationWithUndistortion.dir/cameraCalibrationWithUndistortion.cpp.o -c /home/ioannis/Dev/camera_calibration/CameraCalibration/cameraCalibrationWithUndistortion.cpp",
+  "file": "/home/ioannis/Dev/camera_calibration/CameraCalibration/cameraCalibrationWithUndistortion.cpp"
+}
+]
