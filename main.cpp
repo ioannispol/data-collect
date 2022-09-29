@@ -74,5 +74,18 @@ int main(int argc, char** argv){
 	file_pts.close();
 	cout<<"intrinsics are written in file."<<endl;
 
+	while (true)
+    {
+        rs2::frameset frames = pipe.wait_for_frames();
+        rs2::depth_frame depth = frames.get_depth_frame();
+        float width = depth.get_width();
+        float height = depth.get_height();
+
+        float dist_to_ctr = depth.get_distance(width/2, height/2);
+        std::cout << "The camera is facing an object " << dist_to_ctr << " meters away \r";
+
+        std::cin.get();
+    }
+
 	return 0;
 }

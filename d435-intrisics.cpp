@@ -117,5 +117,37 @@ int main(int argc, char** argv){
     file_pts.close();
     cout<<"Write to file successfully!"<<endl;
     
+    // while (true)
+    // {   
+       
+    //     rs2::frameset frames = pipe.wait_for_frames();
+    //     rs2::depth_frame depth = frames.get_depth_frame();
+    //     float width = depth.get_width();
+    //     float height = depth.get_height();
+    
+    //     float dist_to_ctr = depth.get_distance(width/2, height/2);
+    //     std::cout << "The camera is facing an object " << dist_to_ctr << " meters away \r";
+              
+
+    // }
+ 
+    do {
+        // std::cout << "Press any key to continue..." << std::endl;
+        // if (std::getchar() == 'q') 
+        // {
+        //     std::cout << "Exiting the app!" << std::endl; 
+        //     break;
+        // }
+
+        rs2::frameset frames = pipe.wait_for_frames();
+        rs2::depth_frame depth = frames.get_depth_frame();
+        float width = depth.get_width();
+        float height = depth.get_height();
+    
+        float dist_to_ctr = depth.get_distance(width/2, height/2);
+        std::cout << "The camera is facing an object " << dist_to_ctr << " meters away \r";
+    } while (true);
+
+
     return 0;
 }
