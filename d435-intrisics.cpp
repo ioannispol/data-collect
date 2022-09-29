@@ -50,6 +50,7 @@ void print(const rs2_extrinsics& extrinsics)
 }
 // TODO: Print intrinsics/extrinsics using "void print" function
 
+
 // Get Video Stream Intrinsics
 
 int main(int argc, char** argv){
