@@ -4,6 +4,7 @@
 FILE=~/d435-data-collect
 cfg="./data_collect.cfg"
 
+# TODO:create separate folders in the collection dir
 if ls $FILE; then
     echo "$FILE exists"
     rm -rf $FILE

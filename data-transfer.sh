@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# write a script to archive the data-collection file
 pi="host name"
 pc="remote host name"
 
