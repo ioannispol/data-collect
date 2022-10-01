@@ -41,7 +41,7 @@ rs-enumerate-devices -c > $FILE/d435_data/d435_intrinsics_extrinsics.txt
 ./build/D435_intrinsics
 if [ $? -eq 0 ]; then
     echo "D435_intrinsics completed"
-    mv build/intrinsic.txt $FILE/d435_data/intrinsics.txt
+    mv build/intrinsic.txt $FILE/d435_data/$folder/intrinsics.txt
 else
     echo "D435_intrinsics failed"
     exit 1
