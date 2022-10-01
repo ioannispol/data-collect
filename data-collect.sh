@@ -3,15 +3,18 @@
 
 FILE=~/d435-data-collect
 cfg="./data_collect.cfg"
+PUBLIC_DIR="$HOME/$USER/Public"
 
 # TODO:create separate folders in the collection dir
 if ls $FILE; then
-    echo "$FILE exists"
-    rm -rf $FILE
-    echo "Delete old file"
-    mkdir -p $FILE/d435_data
+    echo "$FILE folder exists"
+    # rm -rf $FILE
+    # echo "Delete old file"
+    read -rp "Enter the name of the test folder: " folder
+    mkdir -p $FILE/d435_data/$folder
 else 
-    mkdir -p $FILE/d435_data
+    read -rp "Enter the name of the test folder: " folder
+    mkdir -p $FILE/d435_data/$folder
 fi
     echo "File $FILE created"
 
@@ -55,3 +58,16 @@ else
     echo "rs-record failed"
     exit 1
 fi
+
+echo "==========================================================="
+
+if find $FILE -maxdepth 0 -empty; then
+    tar -czvf $FILE.tar.gz  *.bag && echo "File $FILE.tar.gz created"
+    mv $FILE.tar.gz $PUBLIC_DIR/$FILE.tar.gz && echo "File $FILE.tar.gz moved to $PUBLIC_DIR"
+    rm -rf $FILE/$folder
+    echo "Delete $FILE/$folder directory!"
+else
+    echo "The $FILE directory is empty!"
+    exit 1
+fi
+rsync $FILE.tar.gz  $PUBLIC_DIR/$FILE.tar.gz
