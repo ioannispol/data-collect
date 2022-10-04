@@ -30,6 +30,10 @@ int main(int argc, char * argv[]) try
     rs2::pipeline pipe;
     rs2::config cfg;
     cfg.enable_record_to_file(out_file.getValue());
+    cfg.enable_stream(RS2_STREAM_INFRARED, 1, 640, 480, RS2_FORMAT_Y8, 30);
+    cfg.enable_stream(RS2_STREAM_INFRARED, 2, 640, 480, RS2_FORMAT_Y8, 30);
+    cfg.enable_stream(RS2_STREAM_DEPTH, 640, 480, RS2_FORMAT_Z16, 30);
+    cfg.enable_stream(RS2_STREAM_COLOR, 640, 480, RS2_FORMAT_RGB8, 30);
 
     std::mutex m;
     auto callback = [&](const rs2::frame& frame)
