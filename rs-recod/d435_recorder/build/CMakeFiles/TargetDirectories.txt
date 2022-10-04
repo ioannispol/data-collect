@@ -1,0 +1,3 @@
+/home/ioannis/Dev/cpp/D435/d435_recorder/build/CMakeFiles/d435_recorder.dir
+/home/ioannis/Dev/cpp/D435/d435_recorder/build/CMakeFiles/edit_cache.dir
+/home/ioannis/Dev/cpp/D435/d435_recorder/build/CMakeFiles/rebuild_cache.dir

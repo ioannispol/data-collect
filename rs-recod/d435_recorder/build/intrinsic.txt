@@ -1,0 +1,19 @@
+Intrinsics: 
+Width: 848
+Height: 480
+PPX: 424.384
+PPY: 232.243
+FX: 429.95
+FY: 429.95
+Distortion model: Brown Conrady
+Coefficients: [0 0 0 0 0]
+-----------------------------
+
+Extrinsics Parameter
+Color sensor id: 1
+Rotation Matrix: 
+0.999912 -0.0114471 -0.00665137
+0.0114673 0.99993 0.00300434
+0.00661652 -0.00308035 0.999973
+Translation Vector: 
+[0.0148573 -4.45279e-06 -9.70754e-05]
