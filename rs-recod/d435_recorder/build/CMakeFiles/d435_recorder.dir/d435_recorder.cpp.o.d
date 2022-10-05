@@ -236,10 +236,7 @@ CMakeFiles/d435_recorder.dir/d435_recorder.cpp.o: \
  /usr/include/c++/11/bits/locale_conv.h /usr/include/c++/11/fstream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
- /usr/include/c++/11/bits/fstream.tcc /usr/include/c++/11/thread \
- /usr/include/c++/11/bits/std_thread.h \
- /usr/include/c++/11/bits/this_thread_sleep.h /usr/include/string.h \
- /usr/include/strings.h \
+ /usr/include/c++/11/bits/fstream.tcc \
  /home/ioannis/Dev/cpp/D435/d435_recorder/../tclap/include/tclap/CmdLine.h \
  /home/ioannis/Dev/cpp/D435/d435_recorder/../tclap/include/tclap/SwitchArg.h \
  /home/ioannis/Dev/cpp/D435/d435_recorder/../tclap/include/tclap/Arg.h \
@@ -267,4 +264,7 @@ CMakeFiles/d435_recorder.dir/d435_recorder.cpp.o: \
  /home/ioannis/Dev/cpp/D435/d435_recorder/../tclap/include/tclap/VersionVisitor.h \
  /home/ioannis/Dev/cpp/D435/d435_recorder/../tclap/include/tclap/IgnoreRestVisitor.h \
  /home/ioannis/Dev/cpp/D435/d435_recorder/../tclap/include/tclap/StdOutput.h \
- /home/ioannis/Dev/cpp/D435/d435_recorder/../tclap/include/tclap/ValuesConstraint.h
+ /home/ioannis/Dev/cpp/D435/d435_recorder/../tclap/include/tclap/ValuesConstraint.h \
+ /usr/include/c++/11/thread /usr/include/c++/11/bits/std_thread.h \
+ /usr/include/c++/11/bits/this_thread_sleep.h /usr/include/string.h \
+ /usr/include/strings.h

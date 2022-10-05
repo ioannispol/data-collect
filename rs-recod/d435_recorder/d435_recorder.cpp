@@ -3,9 +3,7 @@
 #include <stdio.h>
 #include <memory>
 #include <functional>
-#include <thread>
 #include <string.h>
-#include "tclap/CmdLine.h"
 
 using namespace TCLAP;
 
@@ -55,7 +53,12 @@ int main(int argc, char * argv[]) try
 
     parameters::get_extrinsics(depth_stream, color_stream);
 
-    parameters::print_parameters(depth_stream, depth_stream, color_stream);
+    // Print Parameters to file.txt
+    print_parameters(depth_stream, depth_stream, color_stream);
+    //pipeline_enalbe::stop(pipe);
+
+    //int time_d = 5;
+    get_distance(pipe, time);
     
     return EXIT_SUCCESS;
 }

@@ -5,7 +5,9 @@
 #include <chrono>
 #include <iomanip>
 #include <fstream>
-
+#include "tclap/CmdLine.h"
+#include <time.h>
+#include <thread>
 
 struct stream_options 
 {
@@ -124,7 +126,6 @@ struct parameters
         try
         {
             rs2_extrinsics extrinsics = from_stream.get_extrinsics_to(to_stream);
-
             std::cout << "Extrinsics: " << std::endl;
             std::cout << "Rotation Matrix: " << std::endl;
             std::cout << extrinsics.rotation[0] << " " << extrinsics.rotation[1] << " " << extrinsics.rotation[2] << std::endl;
@@ -139,40 +140,72 @@ struct parameters
         }
     }
 
-    static void print_parameters (const rs2::stream_profile& stream, 
-                                const rs2::stream_profile& from_stream, 
-                                const rs2::stream_profile& to_stream)
-    {
-        auto video_stream = stream.as<rs2::video_stream_profile>();
-        
-        rs2_intrinsics intrinsics = video_stream.get_intrinsics();
-        rs2_extrinsics extrinsics = from_stream.get_extrinsics_to(to_stream);
-        // Write parameters to file
-        std::fstream file_pts("intrinsics.txt", std::ios::trunc|std::ios::out);
-        file_pts << "Intrinsics: " << std::endl;
-        file_pts << "Width: " << intrinsics.width << std::endl;
-        file_pts << "Height: " << intrinsics.height << std::endl;
-        file_pts << "PPX: " << intrinsics.ppx << std::endl;
-        file_pts << "PPY: " << intrinsics.ppy << std::endl;
-        file_pts << "FX: " << intrinsics.fx << std::endl;
-        file_pts << "FY: " << intrinsics.fy << std::endl;
-        file_pts << "Distortion model: " << intrinsics.model << std::endl;
-        file_pts << "Coefficients: [" << intrinsics.coeffs[0] << " " << intrinsics.coeffs[1] << " " << intrinsics.coeffs[2] << " " << intrinsics.coeffs[3] << " " << intrinsics.coeffs[4] << "]" << std::endl;
+};
 
+
+void print_parameters(
+                const rs2::stream_profile& stream, 
+                const rs2::stream_profile& from_stream, 
+                const rs2::stream_profile& to_stream
+                )
+{
+    auto video_stream = stream.as<rs2::video_stream_profile>();
+    rs2_intrinsics intrinsics = video_stream.get_intrinsics();
+    rs2_extrinsics extrinsics = from_stream.get_extrinsics_to(to_stream);
+
+    // Write parameters to file
+    std::fstream file_pts("intrinsics.txt", std::ios::trunc|std::ios::out);
+    file_pts << "Intrinsics: " << std::endl;
+    file_pts << "Width: " << intrinsics.width << std::endl;
+    file_pts << "Height: " << intrinsics.height << std::endl;
+    file_pts << "PPX: " << intrinsics.ppx << std::endl;
+    file_pts << "PPY: " << intrinsics.ppy << std::endl;
+    file_pts << "FX: " << intrinsics.fx << std::endl;
+    file_pts << "FY: " << intrinsics.fy << std::endl;
+    file_pts << "Distortion model: " << intrinsics.model << std::endl;
+    file_pts << "Coefficients: [" << intrinsics.coeffs[0] << " " << intrinsics.coeffs[1] << " " << intrinsics.coeffs[2] << " " << intrinsics.coeffs[3] << " " << intrinsics.coeffs[4] << "]" << std::endl;
+
+    file_pts<<"-----------------------------"<<std::endl;
+    file_pts<<std::endl;
+
+    file_pts<<"Extrinsics Parameter"<<std::endl;
+    file_pts<<"Color sensor id: 1"<<std::endl;
+    file_pts << "Rotation Matrix: " << std::endl;
+    file_pts << extrinsics.rotation[0] << " " << extrinsics.rotation[1] << " " << extrinsics.rotation[2] << std::endl;
+    file_pts << extrinsics.rotation[3] << " " << extrinsics.rotation[4] << " " << extrinsics.rotation[5] << std::endl;
+    file_pts << extrinsics.rotation[6] << " " << extrinsics.rotation[7] << " " << extrinsics.rotation[8] << std::endl;
+    file_pts << "Translation Vector: " << std::endl;
+    file_pts << "[" << extrinsics.translation[0] << " " << extrinsics.translation[1] << " " << extrinsics.translation[2] << "]" << std::endl;
+
+    file_pts.close();
+    std::cout<<"Write to file successfully!"<<std::endl;   
+        
+};
+
+void get_distance (const rs2::pipeline &pipe, TCLAP::ValueArg<int> &time)
+{
+    rs2::frameset frames = pipe.wait_for_frames();
+    rs2::depth_frame depth = frames.get_depth_frame();
+    
+    float width = depth.get_width();
+    float height = depth.get_height();
+    
+    auto t = std::chrono::system_clock::now();
+    auto t0 = t;
+    
+    while ( t - t0 <= std::chrono::seconds(time.getValue()))
+    {
+
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+        std::fstream file_pts("intrinsics.txt", std::ios::app);
+        float dist_to_ctr = depth.get_distance(width/2, height/2);
+        std::cout << "The camera is facing an object " << dist_to_ctr << " meters away \r";
+        
         file_pts<<"-----------------------------"<<std::endl;
         file_pts<<std::endl;
+        file_pts << "Object distance: " << dist_to_ctr << " m" << std::endl;
+        t = std::chrono::system_clock::now();
 
-        file_pts<<"Extrinsics Parameter"<<std::endl;
-        file_pts<<"Color sensor id: 1"<<std::endl;
-        file_pts << "Rotation Matrix: " << std::endl;
-        file_pts << extrinsics.rotation[0] << " " << extrinsics.rotation[1] << " " << extrinsics.rotation[2] << std::endl;
-        file_pts << extrinsics.rotation[3] << " " << extrinsics.rotation[4] << " " << extrinsics.rotation[5] << std::endl;
-        file_pts << extrinsics.rotation[6] << " " << extrinsics.rotation[7] << " " << extrinsics.rotation[8] << std::endl;
-        file_pts << "Translation Vector: " << std::endl;
-        file_pts << "[" << extrinsics.translation[0] << " " << extrinsics.translation[1] << " " << extrinsics.translation[2] << "]" << std::endl;
-
-        file_pts.close();
-        std::cout<<"Write to file successfully!"<<std::endl;
     }
-
-};
+            
+}
