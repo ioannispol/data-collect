@@ -19,16 +19,16 @@ Translation Vector:
 [0.0148573 -4.45279e-06 -9.70754e-05]
 -----------------------------
 
-Object distance: 0.7 m
+Object distance: 1.836 m
 -----------------------------
 
-Object distance: 0.7 m
+Object distance: 1.836 m
 -----------------------------
 
-Object distance: 0.7 m
+Object distance: 1.836 m
 -----------------------------
 
-Object distance: 0.7 m
+Object distance: 1.836 m
 -----------------------------
 
-Object distance: 0.7 m
+Object distance: 1.836 m

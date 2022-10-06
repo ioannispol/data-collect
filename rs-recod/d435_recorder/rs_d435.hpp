@@ -9,6 +9,7 @@
 #include <time.h>
 #include <thread>
 
+// TODO: Implement a function that turns ON/OFF the IR Emitter
 struct stream_options 
 {
     static void enable_depth(rs2::config& cfg)
@@ -26,6 +27,31 @@ struct stream_options
     {
         std::cout << "Enabling Color stream" << std::endl;
         cfg.enable_stream(RS2_STREAM_COLOR, 640, 480, RS2_FORMAT_RGB8, 30);
+    }
+    static void ir_emitter(rs2::pipeline& pipe, bool enable)
+    {
+        std::cout << "IR Emitter is enabled" << std::endl;
+        rs2::device current_dev = pipe.get_active_profile().get_device();
+        auto depth_sensor = current_dev.first<rs2::depth_sensor>();
+
+        
+        if (enable)
+        {
+            if (depth_sensor.supports(RS2_OPTION_EMITTER_ENABLED))
+            {
+                depth_sensor.set_option(RS2_OPTION_EMITTER_ENABLED, 1.f);
+                std::cout << "IR Emitter is ON" << std::endl;
+            }
+            else
+            {
+                depth_sensor.set_option(RS2_OPTION_EMITTER_ENABLED, 0.f);
+                std::cout << "IR Emitter is OFF" << std::endl;
+            }
+        }
+        else
+        {
+            std::cout << "IR Emitter is OFF" << std::endl;
+        }
     }
 };
 
@@ -78,6 +104,7 @@ struct get_streams
         auto stream = profile.get_stream(RS2_STREAM_INFRARED).as<rs2::video_stream_profile>();
         std::cout << "Infrared stream resolution: " << stream.width() << "x" << stream.height() << std::endl;
     }
+
 
     static void color_stream(rs2::pipeline& pipe)
     {

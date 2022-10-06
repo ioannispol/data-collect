@@ -26,9 +26,11 @@ int main(int argc, char * argv[]) try
     stream_options::enable_depth(cfg);
     stream_options::enable_infrared(cfg);
     stream_options::enable_color(cfg);
-
     
     pipeline_enalbe::start(pipe, cfg);
+
+    bool enable=true;
+    stream_options::ir_emitter(pipe, enable=false);
     
     auto t = std::chrono::system_clock::now();
     auto t0 = t;
@@ -40,7 +42,8 @@ int main(int argc, char * argv[]) try
     std::cout << "\nRecording finished" << std::endl;
     
     get_streams::depth_stream(pipe);
-
+    get_streams::infrared_stream(pipe);
+    
     pipeline_enalbe::stop(pipe);
 
     // Get depth stream profile and camera intrinsics

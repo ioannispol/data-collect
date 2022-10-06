@@ -1,4 +1,0 @@
- 01/10 12:26:49,327 WARNING [547978858880] (messenger-libusb.cpp:42) control_transfer returned error, index: 768, error: Success, number: 0
- 01/10 12:26:49,579 WARNING [547978858880] (messenger-libusb.cpp:42) control_transfer returned error, index: 768, error: Success, number: 0
- 01/10 12:26:49,630 WARNING [547978858880] (messenger-libusb.cpp:42) control_transfer returned error, index: 768, error: Success, number: 0
- 01/10 12:26:49,781 WARNING [547978858880] (messenger-libusb.cpp:42) control_transfer returned error, index: 768, error: Success, number: 0

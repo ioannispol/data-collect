@@ -51,7 +51,8 @@ echo "==========================================================="
 echo "rs-record started"
 read -rp "Enter the data collection number (d435_recode_number): " collect_num
 
-rs-record -f $FILE/d435_data/d435_record_$collect_num.bag -t $collect_time
+#rs-record -f $FILE/d435_data/d435_record_$collect_num.bag -t $collect_time
+./rs-recod/d435_recorder/build1/d435_recorder -f $FILE/d435_data/d435_record_$collect_num.bag -t $collect_time
 if [ $? -eq 0 ]; then
     echo "rs-record $collect_num completed"
 else
