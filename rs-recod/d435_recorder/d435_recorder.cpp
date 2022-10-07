@@ -9,10 +9,13 @@ using namespace TCLAP;
 
 int main(int argc, char * argv[]) try
 {
+    // Check if the "out" directory exists and create
+    check_dir();
+    
     // Parse command line arguments
     CmdLine cmd("D435 recorder underwater tool", ' ');
     ValueArg<int>    time("t", "Time", "Amount of time to record (in seconds)", false, 10, "");
-    ValueArg<std::string> out_file("f", "FullFilePath", "the file where the data will be saved to", false, "test.bag", "");
+    ValueArg<std::string> out_file("f", "FullFilePath", "the file where the data will be saved to", false, "out/test.bag", "");
 
     cmd.add(time);
     cmd.add(out_file);

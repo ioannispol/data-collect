@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/d435_recorder.dir/d435_recorder.cpp.o -o d435_recorder  -Wl,-rpath,/usr/local/lib/aarch64-linux-gnu /usr/local/lib/aarch64-linux-gnu/librealsense2.so.2.51.1 

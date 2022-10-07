@@ -1,0 +1,5 @@
+ 07/10 19:09:11,724 WARNING [547746578816] (messenger-libusb.cpp:42) control_transfer returned error, index: 768, error: Success, number: 0
+ 07/10 19:09:11,977 WARNING [547746578816] (messenger-libusb.cpp:42) control_transfer returned error, index: 768, error: Success, number: 0
+ 07/10 19:09:12,028 WARNING [547746578816] (messenger-libusb.cpp:42) control_transfer returned error, index: 768, error: Success, number: 0
+ 07/10 19:09:14,287 WARNING [547746578816] (messenger-libusb.cpp:42) control_transfer returned error, index: 768, error: Resource temporarily unavailable, number: 11
+ 07/10 19:09:14,337 WARNING [547746578816] (messenger-libusb.cpp:42) control_transfer returned error, index: 768, error: Resource temporarily unavailable, number: 11

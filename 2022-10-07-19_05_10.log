@@ -1,0 +1,6 @@
+ 07/10 19:05:10,828 WARNING [547543003520] (messenger-libusb.cpp:42) control_transfer returned error, index: 768, error: Success, number: 0
+ 07/10 19:05:10,947 WARNING [547393659264] (sensor.cpp:356) Frame received with streaming inactive,Depth0, Arrived,0.000000 1665165910947.065918
+ 07/10 19:05:11,083 WARNING [547543003520] (messenger-libusb.cpp:42) control_transfer returned error, index: 768, error: Success, number: 0
+ 07/10 19:05:11,134 WARNING [547543003520] (messenger-libusb.cpp:42) control_transfer returned error, index: 768, error: Success, number: 0
+ 07/10 19:05:11,285 WARNING [547543003520] (messenger-libusb.cpp:42) control_transfer returned error, index: 768, error: Success, number: 0
+ 07/10 19:05:11,637 WARNING [547543003520] (messenger-libusb.cpp:42) control_transfer returned error, index: 768, error: Success, number: 0

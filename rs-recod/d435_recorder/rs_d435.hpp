@@ -8,6 +8,9 @@
 #include "tclap/CmdLine.h"
 #include <time.h>
 #include <thread>
+#include <filesystem>
+
+namespace fs = std::filesystem;
 
 // TODO: Implement a function that turns ON/OFF the IR Emitter
 struct stream_options 
@@ -169,6 +172,23 @@ struct parameters
 
 };
 
+void create_dir()
+{
+    std::string dir = "out";
+    fs::create_directory(dir);
+};
+
+void check_dir()
+{
+    if (!fs::is_directory("out") || !fs::exists("out"))
+    {
+        create_dir();
+    }
+    else
+    {
+        std::cout << "The out directory exists!" << std::endl;
+    } 
+};
 
 void print_parameters(
                 const rs2::stream_profile& stream, 
@@ -181,7 +201,8 @@ void print_parameters(
     rs2_extrinsics extrinsics = from_stream.get_extrinsics_to(to_stream);
 
     // Write parameters to file
-    std::fstream file_pts("intrinsics.txt", std::ios::trunc|std::ios::out);
+    check_dir();
+    std::fstream file_pts("out/intrinsics.txt", std::ios::trunc|std::ios::out);
     file_pts << "Intrinsics: " << std::endl;
     file_pts << "Width: " << intrinsics.width << std::endl;
     file_pts << "Height: " << intrinsics.height << std::endl;
@@ -224,7 +245,7 @@ void get_distance (const rs2::pipeline &pipe, TCLAP::ValueArg<int> &time)
     {
 
         std::this_thread::sleep_for(std::chrono::seconds(1));
-        std::fstream file_pts("intrinsics.txt", std::ios::app);
+        std::fstream file_pts("out/intrinsics.txt", std::ios::app);
         float dist_to_ctr = depth.get_distance(width/2, height/2);
         std::cout << "The camera is facing an object " << dist_to_ctr << " meters away \r";
         
