@@ -1,1 +1,0 @@
-/usr/bin/c++ -rdynamic CMakeFiles/rs-record.dir/rs-record.cpp.o -o rs-record  -Wl,-rpath,/usr/local/lib /usr/local/lib/librealsense2.so.2.50.0 

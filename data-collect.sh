@@ -57,21 +57,25 @@ echo "rs-record started"
 ./d435_recorder -f $FILE/d435_data/$folder/d435_record_$file.bag -t $collect_time
 if [ $? -eq 0 ]; then
     echo "rs-record $collect_num completed"
-    mv ./intrinsics.txt $FILE/d435_data/$folder/d435_intrinsics.txt
+    mv ./out/intrinsics.txt $FILE/d435_data/$folder/d435_intrinsics.txt
 else
     echo "rs-record failed"
     exit 1
 fi
 
 echo "==========================================================="
-echo "=================== END ==================================="
-# if find $FILE/d435_data/$folder -maxdepth 0; then
-#     tar -czvf $folder.tar.gz  * && echo "File $folder.tar.gz created"
-#     mv $FILE/d435_data/$folder.tar.gz $PUBLIC_DIR/$folder.tar.gz && echo "File $folder.tar.gz moved to $PUBLIC_DIR"
-#     #rm -rf $FILE/$folder
-#     #echo "Delete $FILE/$folder directory!"
-# else
-#     echo "The $FILE directory is empty!"
-#     exit 1
-# fi
+if find $FILE/d435_data/$folder -maxdepth 0; then
+    #tar -czvf $FILE/$folder.tar.gz $FILE/d435_data/$folder && echo "File $folder.tar.gz created"
+    tar cf - $FILE/d435_data/$folder -P | pv -s $(du -sb $FILE/d435_data/$folder | awk '{print $1'}) | gzip > $FILE/$folder.tar.gz &&
+    echo "File $folder.tar.gz created"
+    mv $FILE/$folder.tar.gz ~/Public/ && echo "File $folder.tar.gz moved to $PUBLIC_DIR"
+    rm -rf $FILE/d435_data/$folder
+    echo "Delete $FILE/$folder directory!"
+else
+    echo "The $FILE directory is empty!"
+    exit 1
+fi
+
 #rsync $FILE/d435_data/$folder.tar.gz  $PUBLIC_DIR/$FILE.tar.gz
+
+echo "=================== END ==================================="

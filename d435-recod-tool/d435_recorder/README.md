@@ -1,12 +1,18 @@
-# rs-record Tool
+# d435-recorder Tool
 
 ## Overview
 
-This tool is designed to collect raw sensor data to rosbag.
+This tool is based on Intel's rs-record tool which designed to collect raw sensor data to rosbag and extented to collect data from the Infrared and color modules of D435 camera.
 
 ## Description
 The tool records for a certain amount of time to a file as specified by the user.
 The goal is to offer a command line recorder with low latency and zero frame drops.
+The tool can record:   
+    - Depth images
+    - Infrared images
+    - RGB images
+Also, the tool can read the cameras intrinsics/extrinsics and write them into the "out" directory as "intrinsics.txt".
+Additionally, the tool calculates the distance of the object the camera face during the collection operation and write the data into the "intrinsics.txt" file.
 
 
 ## Command Line Parameters

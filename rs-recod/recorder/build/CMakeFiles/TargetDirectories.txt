@@ -1,3 +1,0 @@
-/home/ioannis/Documents/01-Projects/PhD/Year 3/D435/datacollect/data-collect/rs-recod/recorder/build/CMakeFiles/rs-record.dir
-/home/ioannis/Documents/01-Projects/PhD/Year 3/D435/datacollect/data-collect/rs-recod/recorder/build/CMakeFiles/edit_cache.dir
-/home/ioannis/Documents/01-Projects/PhD/Year 3/D435/datacollect/data-collect/rs-recod/recorder/build/CMakeFiles/rebuild_cache.dir
