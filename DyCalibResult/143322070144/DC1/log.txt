@@ -1,0 +1,22 @@
+
+Result folder: DyCalibResult/143322070144/DC1
+
+Serial Number: 143322070144
+Device Name: Intel RealSense D435
+Device PID:  0B07
+FW version:  05.13.00.50
+USB Type:  3.2
+
+Calibration Type: Targeted
+Laser Power: On
+Auto Exposure: On
+AE SetPoint: Auto
+Target images: 15
+Target and device orientation aligned: No
+Skip rgb calibration: No
+Initializing GL ...
+Launching graphical view ...
+Streamming Resolution: 1280x720 at 30(fps)
+initialize dynamic calibration parameters ...
+Start Initialize device ...
+Start rectification ...

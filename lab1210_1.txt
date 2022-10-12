@@ -1,0 +1,36 @@
+CustomRW for Intel RealSense D400, Version: 2.12.0.0
+
+  Device PID: 0B07
+  Device name: Intel RealSense D435
+  Serial number: 143322070144
+  Firmware version: 05.13.00.50
+  USB Type: 3.2
+
+Calibration parameters from the device:
+  resolutionLeftRight: 1280 800
+
+  FocalLengthLeft: 640.983276 640.477783
+  PrincipalPointLeft: 644.851440 386.463470
+  DistortionLeft: -0.057503 0.067039 -0.000335 0.000105 -0.021886
+
+  FocalLengthRight: 641.914734 641.265381
+  PrincipalPointRight: 634.084778 390.903839
+  DistortionRight: -0.057946 0.067444 -0.000024 0.000633 -0.022022
+
+  RotationLeftRight: 0.999927 0.000173 -0.012098
+                     -0.000164 1.000000 0.000797
+                     0.012099 -0.000795 0.999926
+  TranslationLeftRight: -50.035740 -0.035842 -0.291289
+
+  HasRGB: 1
+
+  resolutionRGB: 1920 1080
+
+  FocalLengthColor: 1356.996094 1355.606079
+  PrincipalPointColor: 955.757385 568.438049
+  DistortionColor: 0.000000 0.000000 0.000000 0.000000 0.000000
+  RotationLeftColor: 0.999924 0.012350 0.000345
+                     -0.012349 0.999920 -0.002605
+                     -0.000377 0.002601 0.999997
+  TranslationLeftColor: 14.857262 -0.004453 -0.097075
+
