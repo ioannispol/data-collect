@@ -1,0 +1,5 @@
+ 14/10 00:34:24,202 WARNING [548457746816] (messenger-libusb.cpp:42) control_transfer returned error, index: 768, error: Resource temporarily unavailable, number: 11
+ 14/10 00:34:24,321 WARNING [548308623744] (sensor.cpp:356) Frame received with streaming inactive,Depth0, Arrived,0.000000 1665704064321.462646
+ 14/10 00:34:24,455 WARNING [548457746816] (messenger-libusb.cpp:42) control_transfer returned error, index: 768, error: Resource temporarily unavailable, number: 11
+ 14/10 00:34:24,506 WARNING [548457746816] (messenger-libusb.cpp:42) control_transfer returned error, index: 768, error: Resource temporarily unavailable, number: 11
+ 14/10 00:34:24,657 WARNING [548457746816] (messenger-libusb.cpp:42) control_transfer returned error, index: 768, error: Resource temporarily unavailable, number: 11
