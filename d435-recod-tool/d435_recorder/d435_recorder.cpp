@@ -26,8 +26,8 @@ int main(int argc, char * argv[]) try
     
 
     cfg.enable_record_to_file(out_file.getValue());
-    stream_options::enable_depth(cfg);
     stream_options::enable_infrared(cfg);
+    stream_options::enable_depth(cfg);
     stream_options::enable_color(cfg);
     
     pipeline_enalbe::start(pipe, cfg);

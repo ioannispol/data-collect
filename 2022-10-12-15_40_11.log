@@ -1,4 +1,0 @@
- 12/10 15:40:12,188 WARNING [548267999616] (messenger-libusb.cpp:42) control_transfer returned error, index: 768, error: Resource temporarily unavailable, number: 11
- 12/10 15:40:12,442 WARNING [548267999616] (messenger-libusb.cpp:42) control_transfer returned error, index: 768, error: Resource temporarily unavailable, number: 11
- 12/10 15:40:12,492 WARNING [548267999616] (messenger-libusb.cpp:42) control_transfer returned error, index: 768, error: Resource temporarily unavailable, number: 11
- 12/10 15:40:12,643 WARNING [548267999616] (messenger-libusb.cpp:42) control_transfer returned error, index: 768, error: Resource temporarily unavailable, number: 11
