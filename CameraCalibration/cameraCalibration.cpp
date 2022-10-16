@@ -6,7 +6,7 @@
 #include <iostream>
 
 // Defining the dimensions of checkerboard
-int CHECKERBOARD[2]{5,7}; 
+int CHECKERBOARD[2]{6,8}; 
 
 int main()
 {
@@ -80,6 +80,7 @@ int main()
    * and corresponding pixel coordinates of the 
    * detected corners (imgpoints)
   */
+  // TODO: out intrinsics to txt file
   cv::calibrateCamera(objpoints, imgpoints,cv::Size(gray.rows,gray.cols),cameraMatrix,distCoeffs,R,T);
 
   std::cout << "cameraMatrix : " << cameraMatrix << std::endl;
