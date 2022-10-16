@@ -20,6 +20,7 @@ struct stream_options
         std::cout << "Enabling Depth stream" << std::endl;
         cfg.enable_stream(RS2_STREAM_DEPTH, 640, 480, RS2_FORMAT_Z16, 30);
     }
+    // TODO: Correct the code to get both ir streams correct 
     static void enable_infrared(rs2::config& cfg)
     {
         std::cout << "Enabling Infrared streams #1 & #2" << std::endl;
