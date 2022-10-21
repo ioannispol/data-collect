@@ -43,5 +43,9 @@ compile_commands.json
 CTestTestfile.cmake
 _deps
 
+# Common build directories
+build*/
+Debug*/
+
 # Logfiles
 *.log
