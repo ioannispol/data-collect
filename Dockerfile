@@ -28,6 +28,14 @@ RUN apt update && apt install -y \
     wget \
     zlib1g-dev
 
+RUN echo "=================== Install OpenCV ==================="
+COPY ~/.sripts/opencv_install.sh ~/opencv_install.sh
+RUN cd ~ && chmod +x opencv_install.sh && ./opencv_install.sh
+
+RUN echo "=================== Install librealsense ==================="
+COPY ~/.sripts/librealsense_install.sh ~/librealsense_install.sh
+RUN cd ~ && chmod +x librealsense_install.sh && ./librealsense_install.sh
+
 RUN echo "=================== Data Collection ==================="
 
 RUN git clone https://github.com/ioannispol/data-collect.git
