@@ -43,7 +43,7 @@ RUN git clone https://github.com/ioannispol/data-collect.git
 RUN echo "=================== Data Collection repo Downloaded ==================="
 RUN cd data-collect
 WORKDIR "/data-collect/"
-
+     
 # These commands copy your files into the specified directory in the image
 # and set that as the working location
 # COPY . /usr/src/myapp
