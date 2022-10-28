@@ -45,6 +45,7 @@ _deps
 
 # Common build directories
 build*/
+build_*
 Debug*/
 .vscode
 
