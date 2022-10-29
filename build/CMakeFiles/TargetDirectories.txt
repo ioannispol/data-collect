@@ -1,3 +1,0 @@
-/home/pi/data-collect/build/CMakeFiles/rebuild_cache.dir
-/home/pi/data-collect/build/CMakeFiles/edit_cache.dir
-/home/pi/data-collect/build/CMakeFiles/D435_intrinsics.dir

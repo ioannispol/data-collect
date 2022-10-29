@@ -1,4 +1,0 @@
-/home/ioannis/Dev/camera_calibration/CameraCalibration/build/CMakeFiles/cameraCalibration.dir
-/home/ioannis/Dev/camera_calibration/CameraCalibration/build/CMakeFiles/cameraCalibrationWithUndistortion.dir
-/home/ioannis/Dev/camera_calibration/CameraCalibration/build/CMakeFiles/edit_cache.dir
-/home/ioannis/Dev/camera_calibration/CameraCalibration/build/CMakeFiles/rebuild_cache.dir

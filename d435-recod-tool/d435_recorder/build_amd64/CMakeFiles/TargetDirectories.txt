@@ -1,3 +1,0 @@
-/home/ioannis/Dev/d435/data-collect/d435-recod-tool/d435_recorder/build_amd64/CMakeFiles/d435_recorder.dir
-/home/ioannis/Dev/d435/data-collect/d435-recod-tool/d435_recorder/build_amd64/CMakeFiles/edit_cache.dir
-/home/ioannis/Dev/d435/data-collect/d435-recod-tool/d435_recorder/build_amd64/CMakeFiles/rebuild_cache.dir
